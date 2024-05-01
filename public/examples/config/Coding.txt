@@ -1,0 +1,21 @@
+`[PARAGRAPH_TITLE]Intro To React Hooks`
+`React Hooks were introduced into React version 16.8 to make it easier to reuse state logic between components. React Hooks allow ease of reusing state logic without changing component hierarchy. Class based components required a lot more work to achieve the same results. Since the release of version 16.8, functional based components are the preferred way of creating React components. Class based components are still being supported and still being used by many developers. There are benefits of using functional based components over class based. Improved Performance, since they don’t require as much overhead that comes with classes. They are faster and easier to test since they are stateless. Also easier to write and read.`
+`[PARAGRAPH_TITLE]Commonly Used Hooks`
+`[BULLET_LIST]useState: Allows state value to be added to functional components. Simple state transformation.`
+`[CODESNIPIT][useState hook] import React, { useState } from 'react'; \n \n const useStateExample = () => {\n  // declare state variable\n  const [stateName, setStateName] = useState(0); \n\n  return ( \n    <div> \n      <h3>Current Value of useState {stateName}</h3>\n      <button> onClick={() => setStateName(stateName + 1)}>\n       Click to increase value of state\n      </button>\n     </div>\n   );\n } \n \n \n`
+`[BULLET_LIST]useEffect: It allows side effects in functional components. Side effects are operations that affect something outside scope of function being executed. Data fetching, subscriptions, altering the DOM, setTimeout and setIntervals. They occur in a component other than one being rendered.`
+`[CODESNIPIT][useEffect hook] import React, { useEffect } from 'react'; \n \n const useEffectExample = () => {\n  // useEffect hook\n  useEffect(() => { \n    // using timeout inside useEffect hook \n    setTimeout(() => { \n      // your code here.. \n    }); \n  }); \n\n  return ();\n } \n \n \n`
+`[BULLET_LIST]useContext: Gives access to global state, without prop passing.`
+`[CODESNIPIT][useContext hook] import React, { useContext } from 'react'; \n \n const useContextExample = () => {\n  // useContext hook\n  const contextValue = useContext(ContextValue);  \n\n  return ();\n } \n \n \n`
+`[BULLET_LIST]useReducer: Similar to useState but more complex as it is similar in a way to redux pattern as it has its state, but instead of setState it has a dispatch that then goes to a reducer function that has a switch statement and updates the state.`
+`[CODESNIPIT][useReducer hook] import React, { useReducer } from 'react'; \n\n const useReducerExample = () => {\n  // create reducer function\n  const Reducer = (state, action) => {\n    // switch statement here...\n  };\n  const initialState = {\n    // code here...\n  };\n  // useReducer Hook\n  const [state, dispatch] = useReducer(Reducer, initialState);\n\n  return ();\n } \n \n \n`
+`[BULLET_LIST]useCallback: Memorizes callback function and prevents it being recreated every render, unless props have changed.`
+`[CODESNIPIT][useCallback hook] import React, { useCallback, useState } from 'react'; \n\n const useCallbackExample = () => {\n  // useState hook\n  const [stateName, setStateName] = useState();\n  // create useCallback function\n  const useCallbackFunction = (() => {\n  // code here...\n  }, [stateName]);\n\n  return ();\n } \n \n \n`
+`[BULLET_LIST]useMemo: It memorizes values and only renders once.`
+`[CODESNIPIT][useMemo hook] import React, { useMemo, useState } from 'react'; \n\n const useMemoExample = () => {\n  // useState hook\n  const [stateName, setStateName] = useState();\n  // useMemo hook\n  const memoHook = useMemo(() => {\n  // code here...\n  }, [stateName]);\n\n  return ();\n } \n \n \n`
+`[BULLET_LIST]useRef: Similar to JavaScript ref, allows direct reference to DOM elements in a functional component.`
+`[CODESNIPIT][useRef hook] import React, { useRef } from 'react'; \n\n const useRefExample = () => {\n  // useRef hook\n  const refHook = useRef(null);\n\n  return (\n    <div ref={refHook}>\n    </div>\n  );\n } \n \n \n`
+`[BULLET_LIST]Other Hooks`
+`[BULLET_LIST_CHILD_LINKS]https://react.dev/reference/react/hooks`
+`[PARAGRAPH_TITLE]References`
+`[LINKS]https://react.dev/reference/react`
